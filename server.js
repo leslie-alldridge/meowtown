@@ -1,8 +1,8 @@
 var path = require('path')
-
+var data = require('./public/data.json')
 var express = require('express')
 var hbs = require('express-handlebars')
-
+var fs = require('fs');  
 var server = express()
 
 // view engine config
@@ -21,12 +21,12 @@ server.use(express.static(path.join(__dirname, 'public')))
 
 // sample data
 
-var data = {
-  cats: [
-    {id: 1, name: 'fluffy', image:'Maine Coon', lifestory: 'Wet Food'},
-    {id: 2, name: 'tick', image:'Siamese', lifestory: 'Raw mince'}
-  ]
-}
+// var data = {
+//   cats: [
+//     {id: 1, name: 'fluffy', image:'Maine Coon', lifestory: 'Wet Food'},
+//     {id: 2, name: 'tick', image:'Siamese', lifestory: 'Raw mince'}
+//   ]
+// }
 
 // routes
 
@@ -36,6 +36,10 @@ server.get('/', function (req, res) {
 
 server.get('/cats', function (req, res) {
   res.render('index', data)
+})
+
+server.get('/cats/help', function(req, res){
+  res.render('help');
 })
 
 server.get('/cats/new', function (req, res) {
@@ -49,7 +53,9 @@ server.get('/cats/:id', function (req, res) {
   let filteredData = (found[0][requestID - 1])
     console.log(filteredData);
     res.render('show', filteredData)
-    });
+  });
+  //reduce lives by 1
+  
    
 server.post('/cats', function (req, res) {
   console.log(req.body)
@@ -61,11 +67,18 @@ server.post('/cats', function (req, res) {
   let image = (req.body.image);
   //let lifestoryString = 'life-story'
   lifestory = req.body['life-story'];
-
+  let lives = 9;
   //id = counter + 1;
   console.log(request)
-  data.cats[id - 1] = {id, name, image, lifestory};
+
+  data.cats[id - 1] = {id, name, image, lifestory, lives};
+  //write to file now
+  fs.writeFile('./public/data.json', JSON.stringify(data), function(err){
+    console.log(err)
+    res.redirect('/')
+  });
   console.log(data.cats)
+
 })
 
 server.get('/cats/edit/:id', function (req,res){
@@ -87,8 +100,16 @@ server.post('/cats/:id', function (req, res) {
 
   //id = counter + 1;
   //console.log(request.values)
+  
   data.cats[id - 1] = {id, name, image, lifestory};
+  fs.writeFile('./public/data.json', JSON.stringify(data), function(err){
+    console.log(err)
+    res.redirect('/cats/' + id)
+  });
   console.log(data.cats)
+  
 })
+
+
 
 module.exports = server
