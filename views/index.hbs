@@ -13,8 +13,7 @@
     <div class="cats">
       <ul>
         {{#each cats}}
-          <li>{{name}}</li>
-          <li>{{breed}}</li>
+          <a href="/cats/{{id}}"><li>{{name}} || {{lives}}</li></a>
         {{/each}}
       </ul>
     </div>

@@ -4,8 +4,9 @@
 
 <form action="/cats/{{ id }}" accept-charset="UTF-8" method="post">
   <div class="catcreate"><input placeholder="{{ name }}" type="text" name="name" value="{{name}}" /></div>
-  <div class="catcreate"><input placeholder="{{ image }}" type="text" name="image" value="{{image}}"/></div>
+  <div class="catcreate"><input placeholder="{{ image }}" type="url" name="image" value="{{image}}"/></div>
   <div class="catcreate"><textarea placeholder="{{ lifestory }}" name="life-story" value="{{lifestory}}"></textarea></div>
+  <input type="hidden" name="lives" value="{{lives}}"/>
   <div class="catcreate"><input id="submit" type="submit" name="commit" value="Submit" /></div>
 </form>
 

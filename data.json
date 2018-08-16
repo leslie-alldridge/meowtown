@@ -1,0 +1,70 @@
+{
+  "cats": [
+    {
+      "id": 1,
+      "name": "Rocky",
+      "life-story": "Ricky",
+      "image": "http://thecatapi.com/api/images/get?format=src&type=jpg",
+      "lives": 14
+    },
+    {
+      "name": "biglez",
+      "image": "http://thecatapi.com/api/images/get?format=src&type=jpg",
+      "life-story": "4533f",
+      "lives": 85,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "luke",
+      "image": "http://thecatapi.com/api/images/get?format=src&type=jpg",
+      "life-story": "apples",
+      "lives": 89
+    },
+    {
+      "id": 4,
+      "name": "luke",
+      "image": "http://thecatapi.com/api/images/get?format=src&type=jpg",
+      "life-story": "luke",
+      "lives": 54
+    },
+    {
+      "id": 5,
+      "name": "Yuzuki",
+      "image": "http://thecatapi.com/api/images/get?format=src&type=jpg",
+      "life-story": "No feelings :<",
+      "lives": 48
+    },
+    {
+      "id": 6,
+      "name": "Yuzuki2",
+      "image": "http://thecatapi.com/api/images/get?format=src&type=jpg",
+      "life-story": "No feelings :<",
+      "lives": 80
+    },
+    {
+      "name": "Chester",
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/0c/14/dd/d9/liang-pi-a-type-of-cold.jpg",
+      "life-story": "1234",
+      "commit": "Create Cat",
+      "lives": 41,
+      "id": 7
+    },
+    {
+      "id": 8,
+      "name": "sadfsadf",
+      "image": "/1.jpg",
+      "life-story": "dafsad",
+      "commit": "Create Cat",
+      "lives": 72
+    },
+    {
+      "name": "luke",
+      "image": "https://a",
+      "life-story": "sdfsadf",
+      "commit": "Create Cat",
+      "lives": 8,
+      "id": 9
+    }
+  ]
+}

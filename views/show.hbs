@@ -1,5 +1,18 @@
-{{ id }}
-{{ name }}
-{{ image }}
-{{ lifestory }}
-<a href="/cats/edit/{{id}}">Edit Cat</a>
+<div class="viewContainer">
+<div class = "top"> Cat ID: {{ id }}</div>
+<div class = "buttonContainer">   
+ <div class = "top1"> Name: {{ name }}</div>
+ <div class = "top1"> Lives : {{ lives }}</div>
+ 
+  <div class = "top1" id = "top2"> <a href="/cats/edit/{{id}}">  Edit Cat</a></div>
+
+ <div class = "top1" id = "top2"><a href="/"> Home</a></div>
+ </div>
+ <img class="imgcenter" src="{{ image }}">
+
+<br>
+<div class = "top">{{ life-story }}</div>
+
+<br>
+
+</div>
